@@ -74,9 +74,8 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="overflow-hidden border-none shadow-lg h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              className="overflow-hidden border-none shadow-lg h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:bg-white/95 dark:hover:bg-gray-800/95"
             >
-              <div className="bg-primary h-2"></div>
               {project.image && (
                 <div className="h-48 w-full overflow-hidden">
                   <AspectRatio ratio={16/9} className="bg-primary/5">
@@ -110,7 +109,7 @@ export default function ProjectsSection() {
                   </div>
                 )}
               </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0 flex flex-wrap gap-2 border-t border-gray-100 dark:border-gray-800">
+              <CardFooter className="px-6 pb-6 pt-0 flex flex-wrap gap-2">
                 {project.tags.map((tag, i) => (
                   <Badge key={i} variant="outline" className="bg-gray-100 dark:bg-gray-800 border-none text-xs">
                     {tag}

@@ -22,7 +22,7 @@ export default function EducationSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Education */}
-          <Card className="border-none shadow-lg">
+          <Card className="border-none shadow-lg bg-gradient-to-br from-white to-gray-100/80 dark:from-gray-800 dark:to-gray-900/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
             <CardContent className="p-6 md:p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-primary/10 p-3 rounded-lg">
@@ -70,7 +70,7 @@ export default function EducationSection() {
           </Card>
 
           {/* Certifications */}
-          <Card className="border-none shadow-lg">
+          <Card className="border-none shadow-lg bg-gradient-to-br from-white to-gray-100/80 dark:from-gray-800 dark:to-gray-900/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
             <CardContent className="p-6 md:p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-primary/10 p-3 rounded-lg">
@@ -94,7 +94,7 @@ export default function EducationSection() {
         </div>
 
         {/* Leadership & Activities */}
-        <Card className="border-none shadow-lg mt-8">
+        <Card className="border-none shadow-lg mt-8 bg-gradient-to-br from-white to-gray-100/80 dark:from-gray-800 dark:to-gray-900/80 backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
           <CardContent className="p-6 md:p-8">
             <h3 className="text-xl md:text-2xl font-bold mb-6">Leadership & Activities</h3>
 

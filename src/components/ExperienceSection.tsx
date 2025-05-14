@@ -65,7 +65,7 @@ export default function ExperienceSection() {
               <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-10 w-5 h-5 rounded-full bg-primary z-10"></div>
               
               <div className="w-full md:w-1/2 flex justify-center md:pb-12">
-                <Card className="w-full md:max-w-md shadow-lg border-none">
+                <Card className="w-full md:max-w-md shadow-lg border-none bg-gradient-to-br from-white via-white/95 to-gray-100/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="bg-primary/10 p-2 rounded-lg">
