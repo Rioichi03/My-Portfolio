@@ -33,16 +33,8 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 relative">
-      <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" 
-          alt="Tech Background" 
-          className="object-cover w-full h-full"
-        />
-      </div>
-      
-      <div className="container mx-auto relative z-10">
+    <section id="skills" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative">
           Skills
           <span className="block w-20 h-1 bg-primary mx-auto mt-4"></span>
