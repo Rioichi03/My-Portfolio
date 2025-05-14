@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, ArrowDown } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function HeroSection() {
   const scrollToNext = () => {
@@ -47,9 +48,13 @@ export default function HeroSection() {
         <div className="flex justify-center order-1 md:order-2">
           <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary/20 to-primary/50 flex items-center justify-center animate-fade-in">
             <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
-              <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                <span className="text-lg font-medium">Profile Photo</span>
-              </div>
+              <AspectRatio ratio={1/1}>
+                <img 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                  alt="AI Developer" 
+                  className="object-cover w-full h-full"
+                />
+              </AspectRatio>
             </div>
           </div>
         </div>

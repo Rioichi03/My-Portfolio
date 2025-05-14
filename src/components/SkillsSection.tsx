@@ -33,15 +33,23 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto">
+    <section id="skills" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 relative">
+      <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" 
+          alt="Tech Background" 
+          className="object-cover w-full h-full"
+        />
+      </div>
+      
+      <div className="container mx-auto relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative">
           Skills
           <span className="block w-20 h-1 bg-primary mx-auto mt-4"></span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-          <div className="glass-card p-6 md:p-8">
+          <div className="glass-card p-6 md:p-8 backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
             <div className="flex items-center gap-3 mb-8">
               <div className="bg-primary/10 p-3 rounded-lg">
                 <Code className="h-6 w-6 text-primary" />
@@ -62,7 +70,7 @@ export default function SkillsSection() {
             </div>
           </div>
 
-          <div className="glass-card p-6 md:p-8">
+          <div className="glass-card p-6 md:p-8 backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
             <div className="flex items-center gap-3 mb-8">
               <div className="bg-primary/10 p-3 rounded-lg">
                 <Users className="h-6 w-6 text-primary" />
@@ -85,7 +93,7 @@ export default function SkillsSection() {
         </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-6">
-          <div className="glass-card p-6 text-center">
+          <div className="glass-card p-6 text-center backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
             <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
               <Database className="h-6 w-6 text-primary" />
             </div>
@@ -93,7 +101,7 @@ export default function SkillsSection() {
             <p className="text-gray-600 dark:text-gray-400">Building robust data pipelines and infrastructure</p>
           </div>
           
-          <div className="glass-card p-6 text-center">
+          <div className="glass-card p-6 text-center backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
             <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
               <ChartBar className="h-6 w-6 text-primary" />
             </div>
@@ -101,7 +109,7 @@ export default function SkillsSection() {
             <p className="text-gray-600 dark:text-gray-400">Developing intelligent systems and predictive models</p>
           </div>
           
-          <div className="glass-card p-6 text-center">
+          <div className="glass-card p-6 text-center backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
             <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
               <GraduationCap className="h-6 w-6 text-primary" />
             </div>

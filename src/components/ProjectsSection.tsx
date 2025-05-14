@@ -2,11 +2,13 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChartBar, Brain, Film, CreditCard, Music } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface Project {
   title: string;
   description: string;
   icon: React.ElementType;
+  image?: string;
   stats?: { label: string; value: string }[];
   tags: string[];
 }
@@ -17,6 +19,7 @@ export default function ProjectsSection() {
       title: "Epileptic Seizure Classification",
       description: "Implemented CNN, LSTM and other supervised machine learning models to classify epileptic seizures with high accuracy using EEG data.",
       icon: Brain,
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       stats: [{ label: "Accuracy", value: "97%+" }],
       tags: ["Machine Learning", "CNN", "LSTM", "EEG Data"]
     },
@@ -24,6 +27,7 @@ export default function ProjectsSection() {
       title: "Parkinson's Disease Predictor",
       description: "Developed a predictive system using SVM to accurately predict the likelihood of having Parkinson's disease using Fundamental Frequency dataset.",
       icon: ChartBar,
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       stats: [{ label: "Accuracy", value: "95%+" }],
       tags: ["SVM", "Predictive Modeling", "Healthcare"]
     },
@@ -31,6 +35,7 @@ export default function ProjectsSection() {
       title: "Netflix Content Strategy Analysis",
       description: "Analyzed Netflix viewership data to identify optimal content release strategies and viewing patterns.",
       icon: Film,
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       stats: [
         { label: "Viewership Increase", value: "28.5%" },
         { label: "Weekend Engagement", value: "2x" }
@@ -41,6 +46,7 @@ export default function ProjectsSection() {
       title: "Credit Card Fraud Detection",
       description: "Developed a credit card fraud detection system using Random Forest, Logistic Regression, and XGBoost with high accuracy and recall.",
       icon: CreditCard,
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       stats: [
         { label: "Accuracy", value: "98%" },
         { label: "Minority Recall", value: "84%" }
@@ -51,6 +57,7 @@ export default function ProjectsSection() {
       title: "Music Recommendation Engine",
       description: "Built a Music Recommendation Engine using content-based filtering to recommend songs based on genre, artist, and song popularity.",
       icon: Music,
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       tags: ["Content-based Filtering", "CountVectorizer", "Cosine Similarity"]
     }
   ];
@@ -67,6 +74,17 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <Card key={index} className="overflow-hidden border-none shadow-lg h-full flex flex-col">
               <div className="bg-primary h-2"></div>
+              {project.image && (
+                <div className="h-48 w-full overflow-hidden">
+                  <AspectRatio ratio={16/9} className="bg-primary/5">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+                    />
+                  </AspectRatio>
+                </div>
+              )}
               <CardContent className="p-6 flex-grow">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-primary/10 p-2 rounded-lg">
