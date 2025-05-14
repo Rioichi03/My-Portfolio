@@ -57,7 +57,7 @@ export default function ProjectsSection() {
       title: "Music Recommendation Engine",
       description: "Built a Music Recommendation Engine using content-based filtering to recommend songs based on genre, artist, and song popularity.",
       icon: Music,
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
       tags: ["Content-based Filtering", "CountVectorizer", "Cosine Similarity"]
     }
   ];
