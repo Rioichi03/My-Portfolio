@@ -19,10 +19,10 @@ export default function ExperienceSection() {
       location: "Bengaluru, KA",
       period: "Jan 2025 - May 2025",
       description: [
-        "- Led the development of a scalable, automated data scraping system, integrating web automation and advanced methods to tackle anti-bot measures.",
-        "- Fine-tuned FinBERT for sentiment analysis, boosting accuracy from 47% to 85%, later upgrading to gpt-4o model via OpenAI API integration.",
-        "- Engineered data pipelines to process, filter, and transform unstructured data into actionable intelligence through strategic prompt engineering.",
-        "- Conducted extensive research and analysis to optimize system performance and had continuous and effective communications with stakeholders."
+        "Led the development of a scalable, automated data scraping system, integrating web automation and advanced methods to tackle anti-bot measures.",
+        "Fine-tuned FinBERT for sentiment analysis, boosting accuracy from 47% to 85%, later upgrading to gpt-4o model via OpenAI API integration.",
+        "Engineered data pipelines to process, filter, and transform unstructured data into actionable intelligence through strategic prompt engineering.",
+        "Conducted extensive research and analysis to optimize system performance and had continuous and effective communications with stakeholders."
       ]
     },
     {
@@ -31,8 +31,8 @@ export default function ExperienceSection() {
       location: "Kochi, KL",
       period: "May 2023 - June 2023",
       description: [
-        "- Designed an E-commerce website for the sale of IOT security systems and devices for customers in Canada.",
-        "- Used HTML, CSS, ReactJs, NodeJs"
+        "Designed an E-commerce website for the sale of IOT security systems and devices for customers in Canada.",
+        "Used HTML, CSS, ReactJs, NodeJs"
       ]
     },
     {
@@ -41,8 +41,8 @@ export default function ExperienceSection() {
       location: "Kochi, KL",
       period: "May 2022 - June 2022",
       description: [
-        "- Built a program which can detect Brain Hemorrhage by processing CT scan images using machine learning models.",
-        "- Used Python, TensorFlow, Pandas, NumPy, Django"
+        "Built a program which can detect Brain Hemorrhage by processing CT scan images using machine learning models.",
+        "Used Python, TensorFlow, Pandas, NumPy, Django"
       ]
     }
   ];
