@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, GitHub, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 export default function ContactSection() {
@@ -171,7 +171,7 @@ export default function ContactSection() {
                 className="glass-card p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 <div className="bg-primary/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <GitHub className="h-5 w-5 text-primary" />
+                  <Github className="h-5 w-5 text-primary" />
                 </div>
                 <p className="font-medium">GitHub</p>
               </a>

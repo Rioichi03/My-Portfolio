@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { GitHub, Linkedin, Download, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Download, ArrowDown } from "lucide-react";
 
 export default function HeroSection() {
   const scrollToNext = () => {
@@ -34,7 +34,7 @@ export default function HeroSection() {
               Resume
             </Button>
             <Button variant="outline" className="flex items-center gap-2">
-              <GitHub className="w-4 h-4" />
+              <Github className="w-4 h-4" />
               GitHub
             </Button>
             <Button variant="outline" className="flex items-center gap-2">
