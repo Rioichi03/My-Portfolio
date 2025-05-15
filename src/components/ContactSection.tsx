@@ -168,7 +168,7 @@ export default function ContactSection() {
             
             <div className="grid grid-cols-2 gap-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Rioichi03" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group p-6 bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md rounded-xl border-none shadow-lg hover:shadow-xl transition-all duration-300"
@@ -180,7 +180,7 @@ export default function ContactSection() {
               </a>
               
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/jeswin-mathew-168855287" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group p-6 bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md rounded-xl border-none shadow-lg hover:shadow-xl transition-all duration-300"
