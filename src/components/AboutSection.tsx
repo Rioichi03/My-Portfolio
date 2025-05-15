@@ -50,7 +50,7 @@ export default function AboutSection() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur-md -z-10 opacity-30 animate-pulse"></div>
                   <div className="relative z-10">
-                    <div className="w-full aspect-video md:aspect-square rounded-xl overflow-hidden border-2 dark:border-gray-800 shadow-xl">
+                    <div className="w-full aspect-video md:aspect-square rounded-xl overflow-hidden dark:border-gray-800 shadow-xl">
                       <img src="https://images.unsplash.com/photo-1680783954745-3249be59e527?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI and Machine Learning" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/90 dark:bg-gray-800/90 rounded-lg flex items-center justify-center backdrop-blur-sm shadow-lg">
