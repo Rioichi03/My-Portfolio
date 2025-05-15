@@ -67,8 +67,7 @@ export default function ExperienceSection() {
           {experiences.map((exp, index) => (
             <div key={index} className={`relative z-10 md:flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
               {/* Timeline dot with pulsing effect */}
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-10 w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 z-20 animate-pulse-glow"></div>
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-10 w-3 h-3 rounded-full bg-white dark:bg-gray-900 z-30"></div>
+              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-10 w-4 h-4 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 shadow-md shadow-indigo-400/40 z-30"></div>
               
               <div className="w-full md:w-1/2 flex justify-center md:pb-12">
                 <Card className="w-full md:max-w-md shadow-xl border-none bg-gradient-to-br from-white via-white/95 to-blue-50/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
