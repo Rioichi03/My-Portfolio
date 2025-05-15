@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Check } from "lucide-react";
 import { SectionTitle, BackgroundGrid } from "./BackgroundElements";
 
 interface Experience {
@@ -90,10 +90,14 @@ export default function ExperienceSection() {
                       </div>
                     </div>
                     
-                    <ul className="space-y-2 list-disc pl-5">
+                    <ul className="space-y-3">
                       {exp.description.map((item, i) => (
-                        <li key={i} className="text-gray-700 dark:text-gray-300">
-                          {item}
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="mt-1 relative flex h-3 w-3 shrink-0">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-gradient-to-r from-blue-500 to-indigo-600"></span>
+                          </span>
+                          <span className="text-gray-700 dark:text-gray-300">{item}</span>
                         </li>
                       ))}
                     </ul>
