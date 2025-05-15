@@ -109,7 +109,7 @@ export default function SkillsSection() {
               <Database className="h-6 w-6" />
             </div>
             <h4 className="text-lg font-semibold mb-2">AI Engineering</h4>
-            <p className="text-gray-600 dark:text-gray-400">Building robust AI solutions for businesses</p>
+            <p className="text-gray-600 dark:text-gray-400">Building robust and scalable AI solutions for businesses</p>
             
             <div className="mt-4 flex justify-center">
               <div className="flex">
