@@ -1,10 +1,7 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-
 export default function AboutSection() {
-  return (
-    <section id="about" className="py-16 md:py-24 bg-gradient-to-b from-white to-blue-50 dark:from-gray-950 dark:to-gray-900 relative overflow-hidden">
+  return <section id="about" className="py-16 md:py-24 bg-gradient-to-b from-white to-blue-50 dark:from-gray-950 dark:to-gray-900 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
@@ -45,10 +42,7 @@ export default function AboutSection() {
                     <span className="text-2xl font-bold text-primary">100+</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400">Projects</span>
                   </div>
-                  <div className="flex flex-col items-center bg-white/50 dark:bg-gray-800/50 px-5 py-3 rounded-lg">
-                    <span className="text-2xl font-bold text-primary">12+</span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">Publications</span>
-                  </div>
+                  
                 </div>
               </div>
               
@@ -57,11 +51,7 @@ export default function AboutSection() {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur-md -z-10 opacity-30 animate-pulse"></div>
                   <div className="relative z-10">
                     <div className="w-full aspect-video md:aspect-square rounded-xl overflow-hidden border-2 border-white dark:border-gray-800 shadow-xl">
-                      <img 
-                        src="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                        alt="AI and Machine Learning"
-                        className="w-full h-full object-cover"
-                      />
+                      <img src="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AI and Machine Learning" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/90 dark:bg-gray-800/90 rounded-lg flex items-center justify-center backdrop-blur-sm shadow-lg">
                       <div className="text-center">
@@ -76,6 +66,5 @@ export default function AboutSection() {
           </CardContent>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 }
