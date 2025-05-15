@@ -65,7 +65,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-4 mt-8">
             <div className="flex items-center gap-2 bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm py-1 px-3 rounded-full">
               <Code className="h-4 w-4 text-primary" />
-              <span className="text-sm">7+ Projects</span>
+              <span className="text-sm">Vibe Coder</span>
             </div>
             <div className="flex items-center gap-2 bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm py-1 px-3 rounded-full">
               <Brain className="h-4 w-4 text-accent" />
