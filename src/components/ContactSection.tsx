@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { SectionTitle, BackgroundGrid } from "./BackgroundElements";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -37,21 +38,23 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative">
-          Get In Touch
-          <span className="block w-20 h-1 bg-primary mx-auto mt-4"></span>
-        </h2>
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 relative overflow-hidden">
+      <BackgroundGrid />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200/10 dark:bg-purple-900/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto relative z-10">
+        <SectionTitle>Get In Touch</SectionTitle>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="border-none shadow-lg">
+          <Card className="border-none shadow-xl bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md hover:shadow-2xl transition-all duration-300">
             <CardContent className="p-6 md:p-8 space-y-6">
-              <h3 className="text-xl md:text-2xl font-bold">Send Me a Message</h3>
+              <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Send Me a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
                     Name
                   </label>
                   <Input
@@ -61,12 +64,12 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full"
+                    className="w-full bg-white/50 dark:bg-gray-800/50 border-blue-100 dark:border-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900/30"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
                     Email
                   </label>
                   <Input
@@ -77,12 +80,12 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full"
+                    className="w-full bg-white/50 dark:bg-gray-800/50 border-blue-100 dark:border-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900/30"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
                     Message
                   </label>
                   <Textarea
@@ -92,13 +95,13 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full min-h-[150px]"
+                    className="w-full min-h-[150px] bg-white/50 dark:bg-gray-800/50 border-blue-100 dark:border-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900/30"
                   />
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="w-full flex items-center justify-center gap-2"
+                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -106,7 +109,7 @@ export default function ContactSection() {
                   ) : (
                     <>
                       Send Message
-                      <Send className="h-4 w-4" />
+                      <Send className="h-4 w-4 animate-pulse" />
                     </>
                   )}
                 </Button>
@@ -115,14 +118,14 @@ export default function ContactSection() {
           </Card>
           
           <div className="flex flex-col gap-6">
-            <Card className="border-none shadow-lg flex-grow">
+            <Card className="border-none shadow-xl flex-grow bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md hover:shadow-2xl transition-all duration-300">
               <CardContent className="p-6 md:p-8">
-                <h3 className="text-xl md:text-2xl font-bold mb-8">Contact Information</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Contact Information</h3>
                 
                 <div className="space-y-6">
-                  <div className="flex gap-4 items-start">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Mail className="h-5 w-5 text-primary" />
+                  <div className="flex gap-4 items-start group">
+                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
+                      <Mail className="h-5 w-5" />
                     </div>
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">Email</p>
@@ -135,9 +138,9 @@ export default function ContactSection() {
                     </div>
                   </div>
                   
-                  <div className="flex gap-4 items-start">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <Phone className="h-5 w-5 text-primary" />
+                  <div className="flex gap-4 items-start group">
+                    <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
+                      <Phone className="h-5 w-5" />
                     </div>
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">Phone</p>
@@ -150,9 +153,9 @@ export default function ContactSection() {
                     </div>
                   </div>
                   
-                  <div className="flex gap-4 items-start">
-                    <div className="bg-primary/10 p-3 rounded-lg">
-                      <MapPin className="h-5 w-5 text-primary" />
+                  <div className="flex gap-4 items-start group">
+                    <div className="bg-gradient-to-br from-purple-500 to-indigo-600 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
+                      <MapPin className="h-5 w-5" />
                     </div>
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">Location</p>
@@ -168,24 +171,24 @@ export default function ContactSection() {
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="glass-card p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="group p-6 bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md rounded-xl border-none shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="bg-primary/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <Github className="h-5 w-5 text-primary" />
+                <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300">
+                  <Github className="h-5 w-5" />
                 </div>
-                <p className="font-medium">GitHub</p>
+                <p className="font-medium text-center">GitHub</p>
               </a>
               
               <a 
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="glass-card p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="group p-6 bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md rounded-xl border-none shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="bg-primary/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <Linkedin className="h-5 w-5 text-primary" />
+                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300">
+                  <Linkedin className="h-5 w-5" />
                 </div>
-                <p className="font-medium">LinkedIn</p>
+                <p className="font-medium text-center">LinkedIn</p>
               </a>
             </div>
           </div>

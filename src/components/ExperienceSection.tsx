@@ -2,6 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase } from "lucide-react";
+import { SectionTitle, BackgroundGrid } from "./BackgroundElements";
 
 interface Experience {
   role: string;
@@ -48,28 +49,33 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section id="experience" className="py-16 md:py-24 bg-white dark:bg-gray-950">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative">
-          Professional Experience
-          <span className="block w-20 h-1 bg-primary mx-auto mt-4"></span>
-        </h2>
+    <section id="experience" className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 relative overflow-hidden">
+      <BackgroundGrid />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200/10 dark:bg-purple-900/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto relative z-10">
+        <SectionTitle>Professional Experience</SectionTitle>
         
         <div className="space-y-8 relative">
           {/* Timeline connector */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-800"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-200/50 via-indigo-400/50 to-purple-200/50 dark:from-blue-800/30 dark:via-indigo-700/30 dark:to-purple-800/30 rounded-full"></div>
           
           {experiences.map((exp, index) => (
             <div key={index} className={`relative z-10 md:flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-              {/* Timeline dot */}
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-10 w-5 h-5 rounded-full bg-primary z-10"></div>
+              {/* Timeline dot with pulsing effect */}
+              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-10 w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 z-20 animate-pulse-glow"></div>
+              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-10 w-3 h-3 rounded-full bg-white dark:bg-gray-900 z-30"></div>
               
               <div className="w-full md:w-1/2 flex justify-center md:pb-12">
-                <Card className="w-full md:max-w-md shadow-lg border-none bg-gradient-to-br from-white via-white/95 to-gray-100/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
+                <Card className="w-full md:max-w-md shadow-xl border-none bg-gradient-to-br from-white via-white/95 to-blue-50/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="bg-primary/10 p-2 rounded-lg">
-                        <Briefcase className="h-5 w-5 text-primary" />
+                      <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-lg text-white">
+                        <Briefcase className="h-5 w-5" />
                       </div>
                       <h3 className="text-xl font-bold">{exp.role}</h3>
                     </div>
@@ -78,7 +84,7 @@ export default function ExperienceSection() {
                       <p className="text-gray-700 dark:text-gray-300 font-medium">{exp.company}</p>
                       <div className="flex justify-between items-center mt-1 text-sm">
                         <span className="text-gray-600 dark:text-gray-400">{exp.location}</span>
-                        <Badge variant="outline" className="bg-primary/10 border-none">
+                        <Badge className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-none">
                           {exp.period}
                         </Badge>
                       </div>

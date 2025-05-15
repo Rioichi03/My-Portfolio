@@ -1,8 +1,9 @@
 
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChartBar, Brain, Film, CreditCard, Music } from "lucide-react";
+import { ChartBar, Brain, Film, CreditCard, Music, ExternalLink } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
 
 interface Project {
   title: string;
@@ -63,60 +64,76 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative">
-          Projects
-          <span className="block w-20 h-1 bg-primary mx-auto mt-4"></span>
+    <section id="projects" className="py-16 md:py-24 bg-gradient-to-b from-white to-blue-50 dark:from-gray-950 dark:to-gray-900 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 pattern-grid opacity-30"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      
+      <div className="container mx-auto relative z-10">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 font-display">
+          <span className="title-gradient">Projects</span>
+          <div className="flex items-center w-full mt-4 justify-center">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-1 rounded-full"></div>
+            <div className="h-px w-12 bg-gradient-to-r from-primary via-transparent to-transparent"></div>
+          </div>
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="overflow-hidden border-none shadow-lg h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:bg-white/95 dark:hover:bg-gray-800/95"
-            >
-              {project.image && (
-                <div className="h-48 w-full overflow-hidden">
-                  <AspectRatio ratio={16/9} className="bg-primary/5">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                    />
-                  </AspectRatio>
-                </div>
-              )}
-              <CardContent className="p-6 flex-grow">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-primary/10 p-2 rounded-lg">
-                    <project.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="font-bold text-lg">{project.title}</h3>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 mb-5">
-                  {project.description}
-                </p>
-                
-                {project.stats && (
-                  <div className="flex flex-wrap gap-4 mb-5">
-                    {project.stats.map((stat, i) => (
-                      <div key={i} className="text-center">
-                        <p className="text-2xl font-bold text-primary">{stat.value}</p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">{stat.label}</p>
-                      </div>
-                    ))}
+            <div key={index} className="group">
+              <Card 
+                className="overflow-hidden border-none shadow-lg h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-white to-blue-50/50 dark:from-gray-800 dark:to-gray-900/80 rounded-xl hover:bg-white/95 dark:hover:bg-gray-800/95"
+              >
+                {project.image && (
+                  <div className="h-48 w-full overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-tl from-blue-400/30 via-purple-400/30 to-transparent opacity-60 mix-blend-overlay"></div>
+                    <AspectRatio ratio={16/9} className="bg-blue-100/30 dark:bg-blue-900/20">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </AspectRatio>
                   </div>
                 )}
-              </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0 flex flex-wrap gap-2">
-                {project.tags.map((tag, i) => (
-                  <Badge key={i} variant="outline" className="bg-gray-100 dark:bg-gray-800 border-none text-xs">
-                    {tag}
-                  </Badge>
-                ))}
-              </CardFooter>
-            </Card>
+                <CardContent className="p-6 flex-grow flex flex-col">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-lg text-white">
+                      <project.icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="font-bold text-lg">{project.title}</h3>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-5 flex-grow">
+                    {project.description}
+                  </p>
+                  
+                  {project.stats && (
+                    <div className="flex flex-wrap gap-4 mb-5">
+                      {project.stats.map((stat, i) => (
+                        <div key={i} className="text-center bg-white/50 dark:bg-gray-800/50 px-3 py-2 rounded-lg">
+                          <p className="text-2xl font-bold bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent">{stat.value}</p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">{stat.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  
+                  <Button size="sm" variant="ghost" className="group mt-auto self-end flex items-center">
+                    View Details
+                    <ExternalLink className="ml-1 h-3 w-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-px" />
+                  </Button>
+                </CardContent>
+                <CardFooter className="px-6 pb-6 pt-0 flex flex-wrap gap-2">
+                  {project.tags.map((tag, i) => (
+                    <Badge key={i} variant="outline" className="bg-white/50 dark:bg-gray-800/50 border-none text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                </CardFooter>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
