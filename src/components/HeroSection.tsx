@@ -75,8 +75,8 @@ export default function HeroSection() {
         </div>
         
         <div className="flex justify-center order-1 md:order-2 relative">
-          <div className="absolute w-72 h-72 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-3xl opacity-20 dark:opacity-30 animate-pulse-glow"></div>
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-[#60CDFF] flex items-center justify-center animate-float">
+          <div className="absolute w-80 h-80 bg-[#60CDFF] rounded-full blur-3xl opacity-30 dark:opacity-30 animate-pulse-glow"></div>
+          <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#60CDFF] flex items-center justify-center animate-float">
             <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden relative z-10">
               <AspectRatio ratio={1/1} className="bg-[#60CDFF]">
                 <img 
