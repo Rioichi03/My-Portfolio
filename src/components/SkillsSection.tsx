@@ -41,7 +41,7 @@ export default function SkillsSection() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-          <div className="glass-card p-6 md:p-8 backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
+          <div className="glass-card p-6 md:p-8 backdrop-blur-sm bg-gradient-to-br from-white to-gray-100/80 dark:from-gray-800 dark:to-gray-900/80 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl card-highlight">
             <div className="flex items-center gap-3 mb-8">
               <div className="bg-primary/10 p-3 rounded-lg">
                 <Code className="h-6 w-6 text-primary" />
@@ -62,7 +62,7 @@ export default function SkillsSection() {
             </div>
           </div>
 
-          <div className="glass-card p-6 md:p-8 backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
+          <div className="glass-card p-6 md:p-8 backdrop-blur-sm bg-gradient-to-br from-white to-gray-100/80 dark:from-gray-800 dark:to-gray-900/80 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl card-highlight">
             <div className="flex items-center gap-3 mb-8">
               <div className="bg-primary/10 p-3 rounded-lg">
                 <Users className="h-6 w-6 text-primary" />
@@ -85,7 +85,7 @@ export default function SkillsSection() {
         </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-6">
-          <div className="glass-card p-6 text-center backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
+          <div className="glass-card p-6 text-center backdrop-blur-sm bg-gradient-to-br from-white via-white/95 to-gray-100/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl card-highlight">
             <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
               <Database className="h-6 w-6 text-primary" />
             </div>
@@ -93,7 +93,7 @@ export default function SkillsSection() {
             <p className="text-gray-600 dark:text-gray-400">Building robust data pipelines and infrastructure</p>
           </div>
           
-          <div className="glass-card p-6 text-center backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
+          <div className="glass-card p-6 text-center backdrop-blur-sm bg-gradient-to-br from-white via-white/95 to-gray-100/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl card-highlight">
             <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
               <ChartBar className="h-6 w-6 text-primary" />
             </div>
@@ -101,7 +101,7 @@ export default function SkillsSection() {
             <p className="text-gray-600 dark:text-gray-400">Developing intelligent systems and predictive models</p>
           </div>
           
-          <div className="glass-card p-6 text-center backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-lg">
+          <div className="glass-card p-6 text-center backdrop-blur-sm bg-gradient-to-br from-white via-white/95 to-gray-100/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl card-highlight">
             <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
               <GraduationCap className="h-6 w-6 text-primary" />
             </div>
