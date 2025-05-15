@@ -37,13 +37,13 @@ export default function HeroSection() {
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-8 order-2 md:order-1 animate-fade-in-up">
           <div>
-            <span className="text-sm md:text-base font-semibold text-primary mb-2 block tracking-wider">FULL STACK DEVELOPER</span>
+            <span className="text-sm md:text-base font-semibold text-primary mb-2 block tracking-wider">Hello! Welcome to my portfolio</span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
               <span className="block font-display">Jeswin</span>
               <span className="title-gradient font-display">Thomas Mathew</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg">
-              AI Engineer | Full Stack Developer | Data Scientist
+              AI Engineer | Data Scientist | Machine Learning 
             </p>
           </div>
           
@@ -65,7 +65,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-4 mt-8">
             <div className="flex items-center gap-2 bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm py-1 px-3 rounded-full">
               <Code className="h-4 w-4 text-primary" />
-              <span className="text-sm">100+ Projects</span>
+              <span className="text-sm">7+ Projects</span>
             </div>
             <div className="flex items-center gap-2 bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm py-1 px-3 rounded-full">
               <Brain className="h-4 w-4 text-accent" />
