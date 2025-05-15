@@ -24,22 +24,22 @@ export default function AboutSection() {
               <div className="md:col-span-7">
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6 first-letter:text-3xl first-letter:font-bold first-letter:mr-1 first-letter:float-left first-letter:text-primary">
                   I'm a BTech graduate in Computer Science with a passion for exploring the intersection of artificial intelligence, 
-                  machine learning, and full-stack development. My technical journey has equipped me with a diverse skill set and 
+                  Data Science and Machine learning. My technical journey has equipped me with a diverse skill set and 
                   a deep understanding of cutting-edge technologies.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                  As an AI Engineer and Full Stack Developer, I specialize in building data-driven applications, designing machine 
-                  learning models, and developing web solutions. I thrive on challenges that require analytical thinking and creative 
+                  As an AI Engineer, I specialize in building data-driven applications, design & develop machine 
+                  learning models and build scalable AI business solutions. I thrive on challenges that require analytical thinking and creative 
                   problem-solving, with a particular interest in projects that leverage data science to create meaningful impact.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mt-8">
                   <div className="flex flex-col items-center bg-white/50 dark:bg-gray-800/50 px-5 py-3 rounded-lg">
-                    <span className="text-2xl font-bold text-primary">5+</span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">Years Experience</span>
+                    <span className="text-2xl font-bold text-primary">6+</span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">Months Experience</span>
                   </div>
                   <div className="flex flex-col items-center bg-white/50 dark:bg-gray-800/50 px-5 py-3 rounded-lg">
-                    <span className="text-2xl font-bold text-primary">100+</span>
+                    <span className="text-2xl font-bold text-primary">7+</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400">Projects</span>
                   </div>
                   
@@ -51,7 +51,7 @@ export default function AboutSection() {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur-md -z-10 opacity-30 animate-pulse"></div>
                   <div className="relative z-10">
                     <div className="w-full aspect-video md:aspect-square rounded-xl overflow-hidden border-2 border-white dark:border-gray-800 shadow-xl">
-                      <img src="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AI and Machine Learning" className="w-full h-full object-cover" />
+                      <img src="https://images.unsplash.com/photo-1680783954745-3249be59e527?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI and Machine Learning" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/90 dark:bg-gray-800/90 rounded-lg flex items-center justify-center backdrop-blur-sm shadow-lg">
                       <div className="text-center">
