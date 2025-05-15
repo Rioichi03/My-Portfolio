@@ -62,7 +62,7 @@ export default function ExperienceSection() {
         
         <div className="space-y-8 relative">
           {/* Timeline connector */}
-          
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-200/50 via-indigo-400/50 to-purple-200/50 dark:from-blue-800/30 dark:via-indigo-700/30 dark:to-purple-800/30 rounded-full"></div>
           {experiences.map((exp, index) => (
             <div key={index} className={`relative z-10 md:flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
               {/* Timeline dot with pulsing effect */}
