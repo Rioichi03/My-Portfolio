@@ -53,12 +53,7 @@ export default function AboutSection() {
                     <div className="w-full aspect-video md:aspect-square rounded-xl overflow-hidden dark:border-gray-800 shadow-xl">
                       <img src="https://images.unsplash.com/photo-1680783954745-3249be59e527?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI and Machine Learning" className="w-full h-full object-cover" />
                     </div>
-                    <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/90 dark:bg-gray-800/90 rounded-lg flex items-center justify-center backdrop-blur-sm shadow-lg">
-                      <div className="text-center">
-                        <div className="text-xl font-bold text-primary">4.9</div>
-                        <div className="text-xs text-gray-500">Top Rated</div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
