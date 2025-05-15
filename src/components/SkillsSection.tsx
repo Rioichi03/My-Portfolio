@@ -108,8 +108,8 @@ export default function SkillsSection() {
             <div className="bg-gradient-to-br from-sky-400 to-blue-600 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-white">
               <Database className="h-6 w-6" />
             </div>
-            <h4 className="text-lg font-semibold mb-2">Data Engineering</h4>
-            <p className="text-gray-600 dark:text-gray-400">Building robust data pipelines and infrastructure</p>
+            <h4 className="text-lg font-semibold mb-2">AI Engineering</h4>
+            <p className="text-gray-600 dark:text-gray-400">Building robust AI solutions for businesses</p>
             
             <div className="mt-4 flex justify-center">
               <div className="flex">
@@ -124,12 +124,12 @@ export default function SkillsSection() {
             <div className="bg-gradient-to-br from-purple-400 to-purple-600 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-white">
               <ChartBar className="h-6 w-6" />
             </div>
-            <h4 className="text-lg font-semibold mb-2">AI & ML Applications</h4>
-            <p className="text-gray-600 dark:text-gray-400">Developing intelligent systems and predictive models</p>
+            <h4 className="text-lg font-semibold mb-2">Data Science</h4>
+            <p className="text-gray-600 dark:text-gray-400">Tranforming raw data into meaningful insights</p>
             
             <div className="mt-4 flex justify-center">
               <div className="flex">
-                {[1, 2, 3, 4, 5].map((star) => (
+                {[1, 2, 3, 4].map((star) => (
                   <Star key={star} className="h-4 w-4 text-amber-400 fill-amber-400" />
                 ))}
               </div>
@@ -140,12 +140,12 @@ export default function SkillsSection() {
             <div className="bg-gradient-to-br from-indigo-400 to-indigo-600 p-3 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-white">
               <GraduationCap className="h-6 w-6" />
             </div>
-            <h4 className="text-lg font-semibold mb-2">Full Stack Development</h4>
-            <p className="text-gray-600 dark:text-gray-400">Creating end-to-end web applications and services</p>
+            <h4 className="text-lg font-semibold mb-2">Machine Learning</h4>
+            <p className="text-gray-600 dark:text-gray-400">Developing and deploying machine learning models</p>
             
             <div className="mt-4 flex justify-center">
               <div className="flex">
-                {[1, 2, 3, 4, 5].map((star) => (
+                {[1, 2, 3, 4].map((star) => (
                   <Star key={star} className="h-4 w-4 text-amber-400 fill-amber-400" />
                 ))}
               </div>
