@@ -161,7 +161,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, index, isAl
       <div className="w-full md:w-1/2 flex justify-center md:pb-24">
         <Card className="w-full md:max-w-md shadow-xl border-none bg-gradient-to-br from-white via-white/95 to-blue-50/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl group">
           <motion.div
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
             className="h-full"
           >
             <CardContent className="p-6">
