@@ -28,7 +28,7 @@ export default function ProjectsSection() {
       title: "Parkinson's Disease Predictor",
       description: "Developed a predictive system using SVM to accurately predict the likelihood of having Parkinson's disease using Fundamental Frequency dataset.",
       icon: ChartBar,
-      image: "https://pixabay.com/get/gc432e31380701e61adfd79237a84c854b62e46dc8e6664b759f086c169f0365ee1010981fb1832c5ca1f3bb4022d720f7f92a5fe06b50c8839c2313931d9c90f_1280.jpg",
+      image: "https://images.unsplash.com/photo-1707901763802-0033b4dd2e37?q=80&w=3874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       stats: [{ label: "Accuracy", value: "95%+" }],
       tags: ["SVM", "Predictive Modeling", "Healthcare"]
     },
