@@ -20,7 +20,7 @@ export default function ProjectsSection() {
       title: "Epileptic Seizure Classification",
       description: "Implemented CNN, LSTM and other supervised machine learning models to classify epileptic seizures with high accuracy using EEG data.",
       icon: Brain,
-      image: "https://images.unsplash.com/photo-1581089781785-603411fa81e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: "https://images.unsplash.com/photo-1738168504702-0fd24e844188?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       stats: [{ label: "Accuracy", value: "97%+" }],
       tags: ["Machine Learning", "CNN", "LSTM", "EEG Data"]
     },
