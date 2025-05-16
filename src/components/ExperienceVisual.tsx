@@ -165,8 +165,8 @@ const AIVisual: React.FC = () => {
                 opacity: 0 
               }}
               animate={{ 
-                cx: [`${start.x}%`, `${end.x}%`, `${start.x}%`],
-                cy: [`${start.y}%`, `${end.y}%`, `${start.y}%`],
+                cx: [`${start.x}%`, `${end.x}%`],
+                cy: [`${start.y}%`, `${end.y}%`],
                 opacity: [0, 1, 0],
                 transition: { 
                   duration: 4 + (index % 3) * 2,
