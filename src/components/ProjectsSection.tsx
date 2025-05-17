@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { ChartBar, Brain, Film, CreditCard, Music, ExternalLink } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { motion } from "framer-motion";
 
 interface Project {
   title: string;
@@ -15,6 +17,8 @@ interface Project {
 }
 
 export default function ProjectsSection() {
+  const headerAnimation = useScrollAnimation<HTMLHeadingElement>();
+  
   const projects: Project[] = [
     {
       title: "Epileptic Seizure Classification",
@@ -71,70 +75,151 @@ export default function ProjectsSection() {
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
       
       <div className="container mx-auto relative z-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 font-display">
+        <motion.h2 
+          ref={headerAnimation.ref}
+          className="text-3xl md:text-5xl font-bold text-center mb-16 font-display"
+          initial={{ opacity: 0, y: 20 }}
+          animate={headerAnimation.isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.7 }}
+        >
           <span className="title-gradient">Projects</span>
           <div className="flex items-center w-full mt-4 justify-center">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-1 rounded-full"></div>
-            <div className="h-px w-12 bg-gradient-to-r from-primary via-transparent to-transparent"></div>
+            <motion.div 
+              className="h-px w-12 bg-gradient-to-r from-transparent via-primary to-transparent"
+              initial={{ width: 0 }}
+              animate={headerAnimation.isVisible ? { width: '3rem' } : { width: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            ></motion.div>
+            <motion.div 
+              className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-1 rounded-full"
+              initial={{ width: 0 }}
+              animate={headerAnimation.isVisible ? { width: '4rem' } : { width: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            ></motion.div>
+            <motion.div 
+              className="h-px w-12 bg-gradient-to-r from-primary via-transparent to-transparent"
+              initial={{ width: 0 }}
+              animate={headerAnimation.isVisible ? { width: '3rem' } : { width: 0 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+            ></motion.div>
           </div>
-        </h2>
+        </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="group">
-              <Card 
-                className="overflow-hidden border-none shadow-lg h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-white to-blue-50/50 dark:from-gray-800 dark:to-gray-900/80 rounded-xl hover:bg-white/95 dark:hover:bg-gray-800/95"
+          {projects.map((project, index) => {
+            const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ 
+              threshold: 0.1,
+              rootMargin: "0px 0px -100px 0px"
+            });
+            
+            return (
+              <motion.div 
+                key={index} 
+                ref={ref}
+                className="group"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                {project.image && (
-                  <div className="h-48 w-full overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-tl from-blue-400/30 via-purple-400/30 to-transparent opacity-60 mix-blend-overlay"></div>
-                    <AspectRatio ratio={16/9} className="bg-blue-100/30 dark:bg-blue-900/20">
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </AspectRatio>
-                  </div>
-                )}
-                <CardContent className="p-6 flex-grow flex flex-col">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-lg text-white">
-                      <project.icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="font-bold text-lg">{project.title}</h3>
-                  </div>
-                  <p className="text-gray-700 dark:text-gray-300 mb-5 flex-grow">
-                    {project.description}
-                  </p>
-                  
-                  {project.stats && (
-                    <div className="flex flex-wrap gap-4 mb-5">
-                      {project.stats.map((stat, i) => (
-                        <div key={i} className="text-center bg-white/50 dark:bg-gray-800/50 px-3 py-2 rounded-lg">
-                          <p className="text-2xl font-bold bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent">{stat.value}</p>
-                          <p className="text-xs text-gray-600 dark:text-gray-400">{stat.label}</p>
-                        </div>
-                      ))}
+                <Card 
+                  className="overflow-hidden border-none shadow-lg h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-white to-blue-50/50 dark:from-gray-800 dark:to-gray-900/80 rounded-xl hover:bg-white/95 dark:hover:bg-gray-800/95"
+                >
+                  {project.image && (
+                    <div className="h-48 w-full overflow-hidden relative">
+                      <div className="absolute inset-0 bg-gradient-to-tl from-blue-400/30 via-purple-400/30 to-transparent opacity-60 mix-blend-overlay"></div>
+                      <AspectRatio ratio={16/9} className="bg-blue-100/30 dark:bg-blue-900/20">
+                        <motion.img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.7 }}
+                        />
+                      </AspectRatio>
                     </div>
                   )}
-                  
-                  <Button size="sm" variant="ghost" className="group mt-auto self-end flex items-center">
-                    View Details
-                    <ExternalLink className="ml-1 h-3 w-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-px" />
-                  </Button>
-                </CardContent>
-                <CardFooter className="px-6 pb-6 pt-0 flex flex-wrap gap-2">
-                  {project.tags.map((tag, i) => (
-                    <Badge key={i} variant="outline" className="bg-white/50 dark:bg-gray-800/50 border-none text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </CardFooter>
-              </Card>
-            </div>
-          ))}
+                  <CardContent className="p-6 flex-grow flex flex-col">
+                    <div className="flex items-center gap-3 mb-4">
+                      <motion.div 
+                        className="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-lg text-white"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <project.icon className="h-5 w-5" />
+                      </motion.div>
+                      <motion.h3 
+                        className="font-bold text-lg"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                        transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                      >
+                        {project.title}
+                      </motion.h3>
+                    </div>
+                    <motion.p 
+                      className="text-gray-700 dark:text-gray-300 mb-5 flex-grow"
+                      initial={{ opacity: 0 }}
+                      animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
+                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                    >
+                      {project.description}
+                    </motion.p>
+                    
+                    {project.stats && (
+                      <motion.div 
+                        className="flex flex-wrap gap-4 mb-5"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                        transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                      >
+                        {project.stats.map((stat, i) => (
+                          <motion.div 
+                            key={i} 
+                            className="text-center bg-white/50 dark:bg-gray-800/50 px-3 py-2 rounded-lg"
+                            whileHover={{ scale: 1.05, y: -3 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                          >
+                            <p className="text-2xl font-bold bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent">{stat.value}</p>
+                            <p className="text-xs text-gray-600 dark:text-gray-400">{stat.label}</p>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    )}
+                    
+                    <motion.div 
+                      whileHover={{ scale: 1.05, x: 5 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <Button size="sm" variant="ghost" className="group mt-auto self-end flex items-center">
+                        View Details
+                        <motion.span
+                          animate={{ x: [0, 2, 0] }}
+                          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                        >
+                          <ExternalLink className="ml-1 h-3 w-3" />
+                        </motion.span>
+                      </Button>
+                    </motion.div>
+                  </CardContent>
+                  <CardFooter className="px-6 pb-6 pt-0 flex flex-wrap gap-2">
+                    {project.tags.map((tag, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.3, delay: 0.5 + i * 0.05 + index * 0.1 }}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                      >
+                        <Badge variant="outline" className="bg-white/50 dark:bg-gray-800/50 border-none text-xs">
+                          {tag}
+                        </Badge>
+                      </motion.div>
+                    ))}
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

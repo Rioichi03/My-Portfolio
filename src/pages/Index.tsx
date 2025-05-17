@@ -10,6 +10,8 @@ import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
+import { motion } from "framer-motion";
 
 const Index = () => {
   const sections = [
@@ -46,11 +48,22 @@ const Index = () => {
     };
   }, []);
 
+  // Fade-in animation for page sections
+  const fadeInVariant = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } }
+  };
+
   return (
     <ThemeProvider>
       <div className="min-h-screen flex flex-col w-full">
         <Navbar sections={sections} />
-        <main>
+        <ScrollProgress />
+        <motion.main
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariant}
+        >
           <HeroSection />
           <AboutSection />
           <SkillsSection />
@@ -58,7 +71,7 @@ const Index = () => {
           <ProjectsSection />
           <EducationSection />
           <ContactSection />
-        </main>
+        </motion.main>
         <Footer />
       </div>
     </ThemeProvider>
