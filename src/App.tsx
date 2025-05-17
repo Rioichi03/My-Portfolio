@@ -15,9 +15,9 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <LazyMotion features={domAnimation}>
       <TooltipProvider>
+        <AnimatedBackground />
         <Toaster />
         <Sonner />
-        <AnimatedBackground />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

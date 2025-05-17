@@ -17,15 +17,15 @@ export const BackgroundBlobs: React.FC<{
   return (
     <div className={`absolute inset-0 -z-10 overflow-hidden ${className}`}>
       <div 
-        className="shape-blob bg-blue-500/10 dark:bg-blue-600/10 w-[500px] h-[500px] top-[-100px] left-[-150px]" 
+        className="shape-blob bg-blue-500/5 dark:bg-blue-600/5 w-[500px] h-[500px] top-[-100px] left-[-150px]" 
         style={{ animationDelay: '0s' }}
       ></div>
       <div 
-        className="shape-blob bg-purple-500/10 dark:bg-purple-600/10 w-[400px] h-[400px] bottom-[-100px] right-[-100px]" 
+        className="shape-blob bg-purple-500/5 dark:bg-purple-600/5 w-[400px] h-[400px] bottom-[-100px] right-[-100px]" 
         style={{ animationDelay: '3s' }}
       ></div>
       <div 
-        className="hidden md:block shape-blob bg-blue-200/10 dark:bg-indigo-900/10 w-[300px] h-[300px] bottom-[20%] left-[20%]" 
+        className="hidden md:block shape-blob bg-blue-200/5 dark:bg-indigo-900/5 w-[300px] h-[300px] bottom-[20%] left-[20%]" 
         style={{ animationDelay: '6s' }}
       ></div>
     </div>
@@ -36,7 +36,7 @@ export const BackgroundGrid: React.FC<{
   className?: string;
 }> = ({ className = "" }) => {
   return (
-    <div className={`absolute inset-0 -z-10 pattern-grid opacity-30 ${className}`}></div>
+    <div className={`absolute inset-0 -z-10 pattern-grid opacity-20 ${className}`}></div>
   );
 };
 
