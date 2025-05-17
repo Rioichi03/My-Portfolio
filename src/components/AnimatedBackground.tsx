@@ -86,10 +86,10 @@ export default function AnimatedBackground() {
           ctx.arc(particle.x, particleScreenY, particle.radius * twinkleFactor, 0, Math.PI * 2);
           
           // Set color based on theme - more starry in all modes
-          const isDarkMode = theme === 'dark';
+          const isDarkTheme = theme === 'dark';
           
           let color;
-          if (isDarkMode) {
+          if (isDarkTheme) {
             // In dark mode, use varied star colors for night sky effect
             const colorType = Math.random();
             let hue, saturation, lightness;
@@ -127,7 +127,7 @@ export default function AnimatedBackground() {
           ctx.fill();
           
           // Add glow effect to some stars in dark mode
-          if (isDarkMode && particle.radius > 1.2) {
+          if (isDarkTheme && particle.radius > 1.2) {
             const gradient = ctx.createRadialGradient(
               particle.x, particleScreenY, 0,
               particle.x, particleScreenY, particle.radius * 6
@@ -164,7 +164,7 @@ export default function AnimatedBackground() {
           
           if (distance < connectionDistance) {
             // Connection opacity based on distance
-            const opacity = isDarkMode ? 
+            const opacity = isDarkTheme ? 
               Math.max(0.05, 0.18 * (1 - distance/connectionDistance)) : 
               Math.max(0.01, 0.06 * (1 - distance/connectionDistance));
             
@@ -173,12 +173,12 @@ export default function AnimatedBackground() {
             ctx.lineTo(particleB.x, particleBScreenY);
             
             // Different connection colors based on theme
-            const strokeColor = isDarkMode ? 
+            const strokeColor = isDarkTheme ? 
               `rgba(148, 163, 184, ${opacity})` : // Blue-gray for dark mode
               `rgba(59, 130, 246, ${opacity})`; // Blue for light mode
             
             ctx.strokeStyle = strokeColor;
-            ctx.lineWidth = isDarkMode ? 0.5 : 0.3;
+            ctx.lineWidth = isDarkTheme ? 0.5 : 0.3;
             ctx.stroke();
           }
         }
