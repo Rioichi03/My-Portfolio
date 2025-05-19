@@ -110,7 +110,25 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="border-none shadow-xl bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md hover:shadow-2xl transition-all duration-300">
             <CardContent className="p-6 md:p-8 space-y-6">
-              <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-400 bg-clip-text text-transparent break-words whitespace-normal w-full max-w-sm sm:max-w-sm md:max-w-full mx-auto text-center">
+              <h3
+                className="
+                  text-base
+                  sm:text-xl
+                  md:text-2xl
+                  font-bold
+                  bg-gradient-to-r from-purple-600 to-pink-400
+                  bg-clip-text text-transparent
+                  break-words
+                  whitespace-normal
+                  w-full
+                  max-w-[90vw]
+                  sm:max-w-sm
+                  md:max-w-full
+                  mx-auto
+                  text-center
+                  overflow-hidden
+                  [word-break:break-word]"
+              >
                 <span className="typing-effect">{typedText}<span className="caret"></span></span>
               </h3>
               
