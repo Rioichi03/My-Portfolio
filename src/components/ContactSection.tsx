@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { SectionTitle, BackgroundGrid } from "./BackgroundElements";
+import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -16,6 +16,10 @@ export default function ContactSection() {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [typedText, setTypedText] = useState("");
+  const fullText = "Slide into my inbox, not my DMs.";
+  const [isTyping, setIsTyping] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -24,18 +28,74 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
+    // Validate fields before sending
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: "All fields are required!",
+        description: "Please fill in your name, email, and message before sending.",
+        variant: "destructive",
       });
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1500);
+      return;
+    }
+    setIsSubmitting(true);
+
+    emailjs
+      .send(
+        "service_rs1eev5",
+        "template_nc2el64",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "mxPKf-DeMF3HQi4sj"
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message sent!",
+            description: "Thank you for reaching out. I'll get back to you soon.",
+          });
+          setFormData({ name: "", email: "", message: "" });
+          setIsSubmitting(false);
+        },
+        (error) => {
+          toast({
+            title: "Error",
+            description: "Something went wrong. Please try again later.",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+        }
+      );
   };
+
+  // Intersection Observer to trigger typing when in view
+  useEffect(() => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      if (entries[0].isIntersecting) {
+        setIsTyping(true);
+      }
+    };
+    const observer = new window.IntersectionObserver(handleIntersection, {
+      threshold: 0.3,
+    });
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  // Typing effect
+  useEffect(() => {
+    if (!isTyping) return;
+    if (typedText.length < fullText.length) {
+      const timeout = setTimeout(() => {
+        setTypedText(fullText.slice(0, typedText.length + 1));
+      }, 45);
+      return () => clearTimeout(timeout);
+    }
+  }, [isTyping, typedText, fullText]);
 
   return (
     <section id="contact" className="py-16 md:py-24 relative overflow-hidden">
@@ -44,13 +104,15 @@ export default function ContactSection() {
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200/10 dark:bg-purple-900/10 rounded-full blur-3xl"></div>
       
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10" ref={sectionRef}>
         <SectionTitle>Get In Touch</SectionTitle>
         
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="border-none shadow-xl bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md hover:shadow-2xl transition-all duration-300">
             <CardContent className="p-6 md:p-8 space-y-6">
-              <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Send Me a Message</h3>
+              <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-400 bg-clip-text text-transparent">
+                <span className="typing-effect">{typedText}<span className="caret"></span></span>
+              </h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -101,7 +163,7 @@ export default function ContactSection() {
                 
                 <Button 
                   type="submit" 
-                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
+                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-sky-400 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 transition-all duration-300"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -124,7 +186,7 @@ export default function ContactSection() {
                 
                 <div className="space-y-6">
                   <div className="flex gap-4 items-start group">
-                    <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
+                    <div className="bg-gradient-to-br from-cyan-400 to-blue-600 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
@@ -139,7 +201,7 @@ export default function ContactSection() {
                   </div>
                   
                   <div className="flex gap-4 items-start group">
-                    <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
+                    <div className="bg-gradient-to-r from-lime-400 to-green-500 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
@@ -154,7 +216,7 @@ export default function ContactSection() {
                   </div>
                   
                   <div className="flex gap-4 items-start group">
-                    <div className="bg-gradient-to-br from-purple-500 to-indigo-600 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
+                    <div className="bg-gradient-to-br from-orange-400 to-rose-500 p-3 rounded-lg text-white transition-transform duration-300 group-hover:scale-105">
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
@@ -173,7 +235,7 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="group p-6 bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md rounded-xl border-none shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-gradient-to-r from-fuchsia-500 to-pink-500 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300">
                   <Github className="h-5 w-5" />
                 </div>
                 <p className="font-medium text-center">GitHub</p>
@@ -185,7 +247,7 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="group p-6 bg-gradient-to-br from-white via-white/90 to-blue-50/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900/80 backdrop-blur-md rounded-xl border-none shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-gradient-to-br from-emerald-400 to-cyan-500 p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform duration-300">
                   <Linkedin className="h-5 w-5" />
                 </div>
                 <p className="font-medium text-center">LinkedIn</p>

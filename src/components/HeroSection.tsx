@@ -36,7 +36,7 @@ export default function HeroSection() {
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-8 order-2 md:order-1 animate-fade-in-up">
           <div>
-            <span className="text-sm md:text-base font-semibold text-primary mb-2 block tracking-wider">Hello! Welcome to my portfolio</span>
+            <span className="text-sm md:text-base font-semibold text-primary mb-2 block tracking-wider">Welcome! My bugs are in stealth mode.</span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
               <span className="block font-display">Jeswin</span>
               <span className="title-gradient font-display">Thomas Mathew</span>
@@ -53,13 +53,13 @@ export default function HeroSection() {
                 Resume
               </Button>
             </a>
-            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2">
+            <a href="https://github.com/Rioichi03" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2">
               <Button variant="outline" className="flex items-center gap-2 border-2 hover:border-primary">
                 <Github className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12" />
                 GitHub
               </Button>
             </a>
-            <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/jeswin-mathew-168855287" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2">
               <Button variant="outline" className="flex items-center gap-2 border-2 hover:border-primary">
                 <Linkedin className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
                 LinkedIn
