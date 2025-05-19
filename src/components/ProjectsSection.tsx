@@ -1,7 +1,6 @@
-
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChartBar, Brain, Film, CreditCard, Music, ExternalLink } from "lucide-react";
+import { ChartBar, Brain, Film, CreditCard, Music, ExternalLink, Rocket } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -14,6 +13,7 @@ interface Project {
   image?: string;
   stats?: { label: string; value: string }[];
   tags: string[];
+  link?: string; 
 }
 
 export default function ProjectsSection() {
@@ -26,7 +26,8 @@ export default function ProjectsSection() {
       icon: Brain,
       image: "https://images.unsplash.com/photo-1738168504702-0fd24e844188?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       stats: [{ label: "Accuracy", value: "97%+" }],
-      tags: ["Machine Learning", "CNN", "LSTM", "EEG Data"]
+      tags: ["Machine Learning", "CNN", "LSTM", "EEG Data"],
+      link: "https://github.com/Rioichi03/Epileptic-Seizure-classification-using-Machine-and-Deep-Learning" 
     },
     {
       title: "Parkinson's Disease Predictor",
@@ -34,7 +35,8 @@ export default function ProjectsSection() {
       icon: ChartBar,
       image: "https://images.unsplash.com/photo-1707901763802-0033b4dd2e37?q=80&w=3874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       stats: [{ label: "Accuracy", value: "95%+" }],
-      tags: ["SVM", "Predictive Modeling", "Healthcare"]
+      tags: ["SVM", "Predictive Modeling", "Healthcare"],
+      link: "https://github.com/Rioichi03/Parkinson-s-Disease-Prediction-System"
     },
     {
       title: "Netflix Content Strategy Analysis",
@@ -45,7 +47,8 @@ export default function ProjectsSection() {
         { label: "Viewership Increase", value: "28.5%" },
         { label: "Weekend Engagement", value: "2x" }
       ],
-      tags: ["Data Analysis", "Content Strategy", "Viewership"]
+      tags: ["Data Analysis", "Content Strategy", "Viewership"],
+      link: "https://github.com/Rioichi03/Netflix-Content-Strategy-Analysis"
     },
     {
       title: "Credit Card Fraud Detection",
@@ -56,14 +59,24 @@ export default function ProjectsSection() {
         { label: "Accuracy", value: "98%" },
         { label: "Minority Recall", value: "84%" }
       ],
-      tags: ["Fraud Detection", "Random Forest", "XGBoost", "SMOTE"]
+      tags: ["Fraud Detection", "Random Forest", "XGBoost", "SMOTE"],
+      link: "https://github.com/Rioichi03/Credit-Card-Fraud-Detection"
+    },
+    {
+      title: "NASA Battery state Analysis",
+      description: "Analyzed battery data from NASA's Mars rovers to predict battery failure and optimize power management. The focus was on identifying trends that align with expected battery degradation behavior.",
+      icon: Rocket,
+      image: "https://images.unsplash.com/photo-1636614484105-6b199a1fbdca?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      tags: ["Data Analysis", "Data visualization", "Trend analysis"],
+      link: "https://github.com/Rioichi03/NASA-Battery-Dataset-Analysis"
     },
     {
       title: "Music Recommendation Engine",
       description: "Built a Music Recommendation Engine using content-based filtering to recommend songs based on genre, artist, and song popularity.",
       icon: Music,
       image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      tags: ["Content-based Filtering", "CountVectorizer", "Cosine Similarity"]
+      tags: ["Content-based Filtering", "CountVectorizer", "Cosine Similarity"],
+      link: "https://github.com/Rioichi03/Music-recommendation-System"
     }
   ];
 
@@ -190,15 +203,17 @@ export default function ProjectsSection() {
                       whileHover={{ scale: 1.05, x: 5 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <Button size="sm" variant="ghost" className="group mt-auto self-end flex items-center">
-                        View Details
-                        <motion.span
-                          animate={{ x: [0, 2, 0] }}
-                          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                        >
-                          <ExternalLink className="ml-1 h-3 w-3" />
-                        </motion.span>
-                      </Button>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <Button size="sm" variant="ghost" className="group mt-auto self-end flex items-center">
+                          View Details
+                          <motion.span
+                            animate={{ x: [0, 2, 0] }}
+                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                          >
+                            <ExternalLink className="ml-1 h-3 w-3" />
+                          </motion.span>
+                        </Button>
+                      </a>
                     </motion.div>
                   </CardContent>
                   <CardFooter className="px-6 pb-6 pt-0 flex flex-wrap gap-2">

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download, ArrowDown, Code, Brain } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -48,18 +47,24 @@ export default function HeroSection() {
           </div>
           
           <div className="flex flex-wrap gap-4">
-            <Button className="group flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300">
-              <Download className="w-4 h-4 group-hover:animate-bounce" />
-              Resume
-            </Button>
-            <Button variant="outline" className="group flex items-center gap-2 border-2 hover:border-primary">
-              <Github className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12" />
-              GitHub
-            </Button>
-            <Button variant="outline" className="group flex items-center gap-2 border-2 hover:border-primary">
-              <Linkedin className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
-              LinkedIn
-            </Button>
+            <a href="/src/resume/Resume.pdf" download className="group flex items-center gap-2">
+              <Button className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300">
+                <Download className="w-4 h-4 group-hover:animate-bounce" />
+                Resume
+              </Button>
+            </a>
+            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2">
+              <Button variant="outline" className="flex items-center gap-2 border-2 hover:border-primary">
+                <Github className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12" />
+                GitHub
+              </Button>
+            </a>
+            <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2">
+              <Button variant="outline" className="flex items-center gap-2 border-2 hover:border-primary">
+                <Linkedin className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+                LinkedIn
+              </Button>
+            </a>
           </div>
           
           <div className="flex items-center gap-4 mt-8">

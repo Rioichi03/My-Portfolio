@@ -38,7 +38,7 @@ export default function EducationSection() {
                   <div className="absolute -left-3 top-1 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
                   <div className="pl-6">
                     <div className="flex justify-between items-start mb-1">
-                      <h4 className="font-bold text-lg">BTech in Computer Science</h4>
+                      <h4 className="font-bold text-lg">BTech in Computer Science and Engineering</h4>
                       <Badge className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-none">
                         2020 - 2024
                       </Badge>
@@ -58,7 +58,10 @@ export default function EducationSection() {
                       "Data Structures & Algorithms",
                       "Statistics",
                       "Simulation & Modeling",
-                      "CADM"
+                      "Mathematics",
+                      "Computer Networks",
+                      "Database Management Systems",
+                      "Computer Aided Desicion Support Systems",
                     ].map((course, index) => (
                       <Badge 
                         key={index}
