@@ -53,7 +53,7 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section id="experience" className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 relative overflow-hidden">
+    <section id="experience" className="py-16 md:py-24 relative overflow-hidden">
       <BackgroundGrid />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
@@ -94,7 +94,7 @@ export default function ExperienceSection() {
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 top-10 w-4 h-4 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 shadow-md shadow-indigo-400/40 z-30"></div>
                 
                 <div className="w-full md:w-1/2 flex justify-center md:pb-12">
-                  <Card className="w-full md:max-w-md shadow-xl border-none bg-gradient-to-br from-white via-white/95 to-blue-50/90 dark:from-gray-800 dark:via-gray-800/95 dark:to-gray-900/90 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
+                  <Card className="w-full md:max-w-md shadow-xl border-none bg-gradient-to-br from-white/90 via-white/80 to-blue-50/70 dark:from-gray-800/90 dark:via-gray-800/80 dark:to-gray-900/70 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-lg text-white">
