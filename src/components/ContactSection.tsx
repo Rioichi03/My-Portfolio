@@ -17,7 +17,7 @@ export default function ContactSection() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [typedText, setTypedText] = useState("");
-  const fullText = "Slide into my inbox, not my DMs.";
+  const fullText = "Slide into my inbox, pleeeease.";
   const [isTyping, setIsTyping] = useState(false);
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
