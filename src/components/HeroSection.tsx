@@ -47,7 +47,7 @@ export default function HeroSection() {
           </div>
           
           <div className="flex flex-wrap gap-4">
-            <a href="/Resume.pdf" download className="group flex items-center gap-2">
+            <a href="/RESUME.pdf" download className="group flex items-center gap-2">
               <Button className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300">
                 <Download className="w-4 h-4 group-hover:animate-bounce" />
                 Resume
