@@ -21,10 +21,21 @@ export default function ExperienceSection() {
   
   const experiences: Experience[] = [
     {
-      role: "AI Engineer",
+      role: "Technical Research Assosiate - AI",
+      company: "Keywords Studios",
+      location: "Bengaluru, KA",
+      period: "July 2025 - Present",
+      description: [
+        "Led and supervised a team of 4–5 AI Research Associates, ensuring high-quality execution of LLM training, evaluation, and prompt engineering tasks across multiple AI research workflows.",
+        "Performed rigorous quality control (QC) and validation of AI research outputs, maintaining high accuracy standards for datasets, prompts, and model evaluation tasks used in large-scale LLM development.",
+        "Coordinated task allocation, feedback loops, and performance monitoring to improve research efficiency, consistency, and adherence to AI project guidelines."
+      ]
+    },
+    {
+      role: "AI Engineer - Intern",
       company: "Deep Learning Titans",
       location: "Bengaluru, KA",
-      period: "Jan 2025 - May 2025",
+      period: "Jan 2025 - June 2025",
       description: [
         "Led the development of a scalable, automated data scraping system, integrating web automation and advanced methods to tackle anti-bot measures.",
         "Fine-tuned FinBERT for sentiment analysis, boosting accuracy from 47% to 85%, later upgrading to gpt-4o model via OpenAI API integration.",
@@ -33,7 +44,7 @@ export default function ExperienceSection() {
       ]
     },
     {
-      role: "Full Stack Developer",
+      role: "Full Stack Developer - Intern",
       company: "Torc Infotech",
       location: "Kochi, KL",
       period: "May 2023 - June 2023",
@@ -43,7 +54,7 @@ export default function ExperienceSection() {
       ]
     },
     {
-      role: "Python Developer",
+      role: "Python Developer - Intern",
       company: "Camino Infotech",
       location: "Kochi, KL",
       period: "May 2022 - June 2022",
