@@ -55,8 +55,8 @@ export default function AboutSection() {
                     animate={contentAnimation.isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
-                    <span className="text-2xl font-bold text-primary">6+</span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">Months Experience</span>
+                    <span className="text-2xl font-bold text-primary">1+</span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">Years Experience</span>
                   </motion.div>
                   <motion.div 
                     className="flex flex-col items-center bg-white/50 dark:bg-gray-800/50 px-5 py-3 rounded-lg"
