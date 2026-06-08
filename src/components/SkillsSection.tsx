@@ -16,8 +16,7 @@ export default function SkillsSection() {
     "Machine Learning", 
     "Deep Learning", 
     "Data Science", 
-    "HTML", 
-    "CSS", 
+    "Data Annotation",  
     "Data Analytics", 
     "Data Visualization", 
     "Generative AI"
