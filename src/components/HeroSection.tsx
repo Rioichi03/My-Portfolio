@@ -85,7 +85,7 @@ export default function HeroSection() {
             <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden relative z-10">
               <AspectRatio ratio={1/1} className="bg-[#60CDFF]">
                 <img 
-                  src="/lovable-uploads/9f86e9ca-a211-41da-be21-bb1531f23cdb.png" 
+                  src="/lovable-uploads/Photo1.PNG" 
                   alt="Jeswin Thomas Mathew" 
                   className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
                 />
